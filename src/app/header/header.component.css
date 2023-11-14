@@ -1,0 +1,26 @@
+.header-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 0.5rem;
+}
+.header-menu-nav{
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header-menu-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.header-menu-list-item{
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;    
+}
