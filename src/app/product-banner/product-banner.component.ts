@@ -8,5 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './product-banner.component.html',
   styleUrl: './product-banner.component.css'
 })
+
 export class ProductBannerComponent {
+  productImagesPath = ['black.png','white.png', 'blue.png', 'pink.png'];
 }
