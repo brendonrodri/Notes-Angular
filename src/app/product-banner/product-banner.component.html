@@ -10,13 +10,10 @@
                 aperiam quidem neque eos soluta aspernatur consequatur, at officia labore non voluptates voluptatem
                 quibusdam dignissimos!
             </p>
-            <button class="read-more-button">Read more about new iPhone...</button>
+            <button (click)="showDetails()" class="read-more-button">Read more about new iPhone...</button>
         </div>
     </article>
     <div class="product-gallery-images">
-        <img src="../assets/images/{{productImagesPath[0]}}" alt="" class="product-image">
-        <img src="../assets/images/{{productImagesPath[1]}}" alt="" class="product-image">
-        <img src="../assets/images/{{productImagesPath[2]}}" alt="" class="product-image">
-        <img src="../assets/images/{{productImagesPath[3]}}" alt="" class="product-image">
+        <img *ngFor="let imageName of productImagesPath" src="../assets/images/{{imageName}}" alt="" class="product-image">
     </div>
 </section>

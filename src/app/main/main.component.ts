@@ -10,5 +10,4 @@ import { ProductBannerComponent } from "../product-banner/product-banner.compone
     imports: [CommonModule, ProductBannerComponent]
 })
 export class MainComponent {
-
 }
