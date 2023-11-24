@@ -1,1 +1,13 @@
-<p>others-products works!</p>
+<nav class="other-products-menu">
+  <ul class="menu-list" >
+    <li class="menu-items" *ngFor="let productsItem of products">
+        <div class="product-image-box">
+          <img src="../../assets/images/{{productsItem.imageSrc}}" alt="{{productsItem.name}}" class="product-image">
+        </div>
+        <div class="product-description">
+          <h3> {{productsItem.name}} </h3>
+          <button class="see-more-button"(click)="goToProductPage(productsItem)" >See more</button>
+        </div>
+    </li>
+  </ul>
+</nav>
