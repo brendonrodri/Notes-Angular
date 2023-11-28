@@ -1,13 +1,18 @@
 <section class="product-grid">
   <div *ngFor="let productItem of productList" class="product-card">
-    <img src="../../assets/images/{{productItem.imageSrc}}" alt="{{productItem.name}}" class="product-card-image">
+    <div class="image-box">
+      <img src="../../assets/images/{{productItem.imageSrc}}" alt="{{productItem.name}}" class="product-card-image">
+    </div>
     <div class="product-card-description">
       <h3 class="card-description-title">{{productItem.name}}</h3>
-      <div class="card-buttons-box">
-        <span class="price">{{productItem.price}}</span>
-        <button class="add-to-cart">+</button>
-        <button class="buy">$</button>
-      </div>
+      <hr />
+      <section class="card-buttons-box">
+        <span class="price"><b>R$ </b> {{productItem.price}}</span>
+        <div>
+          <button class="product-button" id="add-to-cart">+</button>
+          <button class="product-button" id="buy">$</button>
+        </div>
+      </section>
     </div>
   </div>
 </section>
