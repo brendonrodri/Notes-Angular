@@ -11,12 +11,25 @@ import { Router } from '@angular/router';
   styleUrl: './others-products.component.css'
 })
 export class OthersProductsComponent {
+
   products = PRODUCTS;
+  selectedProduct?: Product;
   public router = inject(Router);
 
-  public goToProductPage(product: Product):void{
+  // selectItem(selectedProductId: number){
+  //   this.selectedProduct = this.products.find(
+  //     (product: Product)=> product.id === selectedProductId);
+  //   // console.log(this.selectedProduct);
+  //   this.goToProductPage(this.selectedProduct);
+  // }
+  // public goToProductPage(selectedProduct?: Product):void{
+  //   this.router.navigate(
+  //     [`/product-page/${selectedProduct?.name}`, {queryParams: selectedProduct}])
+  // }
+  public goToProductPage(productId: number):void{
     this.router.navigate(
-      ([`/product-page/${product.name}`, {queryParams: product}]))
+      [`/product-page/${productId}`])
   }
+
 
 }

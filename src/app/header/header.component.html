@@ -4,10 +4,10 @@
     </div>
     <nav class="header-menu-nav">
         <ul class="header-menu-list">
-            <li class="header-menu-list-item">Home</li>
-            <li class="header-menu-list-item">Shop</li>
-            <li class="header-menu-list-item">Contacts</li>
-            <li class="header-menu-list-item">About</li>
+            <li class="header-menu-list-item" (click)="goToPage('')"  >Home</li>
+            <li class="header-menu-list-item" (click)="goToPage('/shop')">Shop</li>
+            <li class="header-menu-list-item" (click)="goToPage('/contacts')">Contacts</li>
+            <li class="header-menu-list-item" (click)="goToPage('/about')">About</li>
         </ul>
     </nav>
 </header>

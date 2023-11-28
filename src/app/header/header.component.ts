@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  public router = inject(Router);
 
+  goToPage(routeName: string):void{
+    this.router.navigate(
+      [`${routeName}`]
+    )
+  }
 }

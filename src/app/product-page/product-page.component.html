@@ -1,8 +1,21 @@
-<div>
-  <h2> {{product?.name}}  </h2>
-  <img
-    src="../../assets/images/{{product?.imageSrc}}"
-    alt="{{product?.name}}"
-  />
-  <p>{{product?.description}}</p>
-</div>
+
+<section class="product-section" id="#{{pageProduct?.name}}">
+  <h2 class="product-title"> {{pageProduct?.name}} </h2>
+  <div class="product-box-container">
+    <p class="product-description">{{pageProduct?.description}}</p>
+    <img
+      class="product-image"
+      src="../../assets/images/{{pageProduct?.imageSrc}}"
+      alt="{{pageProduct?.name}}"
+    />
+  </div>
+  <div class="product-box-container">
+    <img
+      class="product-image"
+      src="../../assets/images/{{pageProduct?.imageSrc}}"
+      alt="{{pageProduct?.name}}"
+    />
+    <p class="product-description">{{pageProduct?.description}}</p>
+  </div>
+</section>
+<app-others-products></app-others-products>

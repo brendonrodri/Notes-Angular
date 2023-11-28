@@ -1,23 +1,48 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
-import { Product } from '../../products';
+import { Component, OnInit,} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PRODUCTS, Product } from '../../products';
+import { OthersProductsComponent } from "../others-products/others-products.component";
 
 @Component({
-  selector: 'app-product-page',
-  standalone: true,
-  imports: [CommonModule, NgFor],
-  templateUrl: './product-page.component.html',
-  styleUrl: './product-page.component.css'
+    standalone: true,
+    selector: 'app-product-page',
+    templateUrl: './product-page.component.html',
+    styleUrls: ['./product-page.component.css'],
+    imports: [OthersProductsComponent]
 })
 export class ProductPageComponent implements OnInit{
-  private activatedRouter = inject(ActivatedRoute)
-  product!: Product;
-  ngOnInit(): void {
-    // this.activatedRouter.snapshot.queryParams;
-    console.log(this.product);
-    console.log('click')
-  }
+
+productList: Product[] = PRODUCTS;
+productId: number  = 0;
+pageProduct?: Product;
+
+getProductPage(selectedProductId: number):Product | undefined {
+  return this.productList.find((productItem)=> productItem.id == selectedProductId);
+}
+constructor(private activatedRoute: ActivatedRoute){}
+
+ngOnInit(): void {
+  this.activatedRoute.params.subscribe((params)=>{
+    this.productId = +params['id'];
+    this.pageProduct = this.getProductPage(this.productId);
+  })
+  this.getProductPage(this.productId);
 }
 
-// COMO RECEBER OS DADOS DESSE COMPONENTE RESPEITANDO O PRINCÍPIO DA RESPONSABILIDADE ÚNICA??????
+}
+
+
+// export class ProductPageComponent implements OnInit {
+//   private activatedRoute = inject(ActivatedRoute);
+//   product: Product = { id: 0, name: '', imageSrc: '' , price: 0, description: '' };
+
+//   ngOnInit(): void {
+//     this.activatedRoute.queryParams.subscribe(params => {
+//       // Verifica se os queryParams existem e atribui ao objeto product
+//       if (params) {
+//         this.product = params as Product;
+//       }
+//     });
+//     console.log(this.product)
+//   }
+// }

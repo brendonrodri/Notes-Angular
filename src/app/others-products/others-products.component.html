@@ -6,7 +6,8 @@
         </div>
         <div class="product-description">
           <h3> {{productsItem.name}} </h3>
-          <button class="see-more-button"(click)="goToProductPage(productsItem)" >See more</button>
+            <button class="see-more-button"(click)="goToProductPage(productsItem.id)
+          " >See more</button>
         </div>
     </li>
   </ul>
