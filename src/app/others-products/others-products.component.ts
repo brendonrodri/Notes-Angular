@@ -16,6 +16,8 @@ export class OthersProductsComponent {
   selectedProduct?: Product;
   public router = inject(Router);
 
+  //porque não consigo passar o objeto do item via rota e receber do outro lado?
+
   // selectItem(selectedProductId: number){
   //   this.selectedProduct = this.products.find(
   //     (product: Product)=> product.id === selectedProductId);
@@ -26,6 +28,8 @@ export class OthersProductsComponent {
   //   this.router.navigate(
   //     [`/product-page/${selectedProduct?.name}`, {queryParams: selectedProduct}])
   // }
+
+
   public goToProductPage(productId: number):void{
     this.router.navigate(
       [`/product-page/${productId}`])

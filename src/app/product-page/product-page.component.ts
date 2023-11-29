@@ -31,6 +31,8 @@ ngOnInit(): void {
 
 }
 
+//o que pode ser melhorado para que essa lógica funcione e eu consiga receber o objeto via rota?
+
 
 // export class ProductPageComponent implements OnInit {
 //   private activatedRoute = inject(ActivatedRoute);
